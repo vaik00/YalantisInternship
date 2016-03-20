@@ -27,11 +27,15 @@ It should be screen with ScrollView, textviews and  horizontal recycler view wit
 
 # UI mistakes:
 
-* different margin in list items
-* too big up button
-* main text dont have ukrainian translation
-* different size of dividers
-* subtitle and the action perhaps can be in a single row
+* Different size in list items section (material standart 72dp).
+* Too big up button.
+* Main content dont have ukrainian translation.
+* Different size of dividers.
+* Subtitle and the action perhaps can be in a single row.
+* Main text should be visible better.
+
+# Final version
+![picture 1](http://www.image-share.com/upload/3195/247.jpg) ![picture 2](http://www.image-share.com/upload/3195/248.jpg)
 
 
 
