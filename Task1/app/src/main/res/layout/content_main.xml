@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fillViewport="true"
+    tools:context="com.yalantis.task1.Main"
+    tools:showIn="@layout/activity_main"
+    android:background="@color/main_background">
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/subtitle">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:id="@+id/title"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action"
+        android:id="@+id/in_progress"
+        android:background="@drawable/round_background"
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/subtitle"
+        android:background="@color/divider"
+        android:id="@+id/title_divider"
+        android:layout_marginTop="10dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/created_wraper"
+        android:layout_below="@id/title_divider">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/created"
+            android:id="@+id/created"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/created_value"
+            android:id="@+id/created_value"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/secondary_text"
+            android:layout_centerVertical="true" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:id="@+id/created_divider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/registered_wraper"
+        android:layout_below="@id/created_wraper">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registered"
+            android:id="@+id/registered"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registered_value"
+            android:id="@+id/registered_value"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/secondary_text"
+            android:layout_centerVertical="true" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:id="@+id/registered_divider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/resolve_wraper"
+        android:layout_below="@id/registered_wraper">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resolve_to"
+            android:id="@+id/resolve"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resolve_value"
+            android:id="@+id/resolve_value"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/secondary_text"
+            android:layout_centerVertical="true" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:id="@+id/resolve_divider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/responsible_wraper"
+        android:layout_below="@id/resolve_wraper">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/responsible"
+            android:id="@+id/responsible"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/responsible_value"
+            android:id="@+id/responsible_value"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/secondary_text"
+            android:layout_centerVertical="true" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:id="@+id/responsible_divider"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/responsible_wraper"
+        android:id="@+id/content_wraper"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_text"
+            android:id="@+id/content" />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/images_container"
+        android:scrollbars="horizontal"
+        android:paddingTop="@dimen/recycler_padding"
+        android:minHeight="@dimen/recycler_minheight"
+        android:layout_below="@+id/content_wraper"/>
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Task1</string>
+    <string name="toolbar_title">CE-1257218</string>
+    <string name="title">Municipal menage</string>
+    <string name="action">In progress</string>
+    <string name="created">Created</string>
+    <string name="created_value">Feb. 25th 2016</string>
+    <string name="registered">Registered</string>
+    <string name="registered_value">Feb. 26th 2016</string>
+    <string name="resolve_to">Resolve to</string>
+    <string name="resolve_value">Feb. 29th 2016</string>
+    <string name="responsible">Responsible</string>
+    <string name="responsible_value">Dnipropetrovsk MVK</string>
+    <string name="main_text">Android - an operating system and platform for mobile phones and tablet computers,
+        created by Google and based on the Linux core. Supported by Alliance Open Handset Alliance (OHA).
+        Although the Android kernel is based on Linux, he stood somewhat aloof Linux-community and Linux-infrastructure.
+        The basic element of the operating system is to implement the Dalvik virtual machine Java,
+        and all software and application based on this realization of Java.</string>
+    <string-array name="images" translatable="false">>
+        <item>https://pp.vk.me/c633726/v633726383/15d24/N7W-_f-vjxQ.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d1b/3N8v74WxNDA.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d12/jUQdkb91Yko.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d09/UASH-aXedzk.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d00/BT9EAx_Q_hA.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15cf7/KNTLK4bcCX8.jpg</item>
+    </string-array>
+</resources>
