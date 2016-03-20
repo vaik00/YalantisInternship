@@ -5,6 +5,9 @@ Yalantis Android Internship Task #1
 
 # Task
 Create screen with controls
+
+![picture task](http://www.image-share.com/upload/3195/244.jpg)
+
 It should be screen with ScrollView, textviews and  horizontal recycler view with images
 
 ## Requirments: 
@@ -28,6 +31,7 @@ It should be screen with ScrollView, textviews and  horizontal recycler view wit
 * too big up button
 * main text dont have ukrainian translation
 * different size of dividers
+* subtitle and the action perhaps can be in a single row
 
 
 
