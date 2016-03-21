@@ -17,12 +17,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> {
-    private List<String> images;
-    private Context ctx;
+    private List<String> mImages;
+    private Context mCtx;
 
     public ImageAdapter(List<String> images, Context ctx) {
-        this.images = images;
-        this.ctx = ctx;
+        this.mImages = images;
+        this.mCtx = ctx;
     }
 
     @Override
@@ -35,14 +35,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
     @Override
     public void onBindViewHolder(ItemHolder item, final int position) {
         Picasso
-                .with(ctx)
-                .load(images.get(position))
+                .with(mCtx)
+                .load(mImages.get(position))
                 .into(item.imageContainer);
         assert item.imageContainer != null;
         item.imageContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ctx,
+                Toast.makeText(mCtx,
                         "ImageView " + position,
                         Toast.LENGTH_SHORT)
                         .show();
@@ -52,7 +52,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
 
     @Override
     public int getItemCount() {
-        return images.size();
+        return mImages.size();
     }
 
 
