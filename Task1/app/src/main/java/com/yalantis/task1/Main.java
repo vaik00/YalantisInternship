@@ -18,9 +18,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Main extends AppCompatActivity {
+//[Comment] Wrong toolbar and status bar color
+public class Main extends AppCompatActivity { //[Comment] Main what? Use informative class names
     @Bind(R.id.images_container)
-    RecyclerView imagesContainer;
+    RecyclerView imagesContainer; //[Comment] You don't need this object like class field
     @Bind(R.id.created)
     TextView created;
     @Bind(R.id.registered)
@@ -42,7 +43,7 @@ public class Main extends AppCompatActivity {
     @Bind(R.id.registered_value)
     TextView registeredValue;
     @Bind(R.id.content)
-    TextView content;
+    TextView content; //[Comment] Unused objects. Wrong names
 
     @OnClick({R.id.created,
             R.id.registered,
@@ -68,7 +69,7 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //[Comment] Sometimes it can be null. Please add if else check
         ButterKnife.bind(this);
         if (getIntent().getBooleanExtra("EXIT", false)) {
             finish();
@@ -90,7 +91,8 @@ public class Main extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Main.this, Main.class);
+        Intent intent = new Intent(Main.this, Main.class); //[Comment] Awful. 1. You don't need to override onBackPressed
+        //                                                                    2. Anyway you can just call finish() instead of recalling activity, and checking by flag
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("EXIT", true);
         startActivity(intent);

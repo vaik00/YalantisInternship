@@ -181,3 +181,5 @@
         android:layout_below="@+id/content_wraper"/>
 </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
+
+<!-- [Comment] Hardcode -->

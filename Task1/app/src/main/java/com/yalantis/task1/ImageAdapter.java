@@ -22,7 +22,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
 
     public ImageAdapter(List<String> images, Context ctx) {
         this.mImages = images;
-        this.mCtx = ctx;
+        this.mCtx = ctx; //[Comment] Without this
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
 
 
     public class ItemHolder extends RecyclerView.ViewHolder {
-        @Nullable
+        @Nullable //[Comment] I'm not sure that it can be null
         @Bind(R.id.image_container)
         ImageView imageContainer;
 
