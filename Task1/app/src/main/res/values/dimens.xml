@@ -6,4 +6,9 @@
     <dimen name="image_height">300dp</dimen>
     <dimen name="recycler_minheight">300dp</dimen>
     <dimen name="recycler_padding">8dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="subtitle_height">48dp</dimen>
+    <dimen name="item_height">72dp</dimen>
+    <dimen name="content_margin_top">16dp</dimen>
+    <dimen name="subtitle_divider_margin_top">10dp</dimen>
 </resources>

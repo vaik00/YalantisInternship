@@ -18,7 +18,7 @@
     android:layout_width="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/subtitle_height"
         android:id="@+id/subtitle"
         android:focusable="true"
         android:focusableInTouchMode="true">
@@ -46,14 +46,14 @@
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/divider_height"
         android:layout_below="@id/subtitle"
         android:background="@color/divider"
         android:id="@+id/title_divider"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="@dimen/subtitle_divider_margin_top" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/item_height"
         android:id="@+id/created_wraper"
         android:layout_below="@id/title_divider">
         <TextView
@@ -73,14 +73,14 @@
             android:layout_centerVertical="true" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_height"
             android:background="@color/divider"
             android:id="@+id/created_divider"
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/item_height"
         android:id="@+id/registered_wraper"
         android:layout_below="@id/created_wraper">
         <TextView
@@ -100,14 +100,14 @@
             android:layout_centerVertical="true" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_height"
             android:background="@color/divider"
             android:id="@+id/registered_divider"
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/item_height"
         android:id="@+id/resolve_wraper"
         android:layout_below="@id/registered_wraper">
         <TextView
@@ -127,14 +127,14 @@
             android:layout_centerVertical="true" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_height"
             android:background="@color/divider"
             android:id="@+id/resolve_divider"
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/item_height"
         android:id="@+id/responsible_wraper"
         android:layout_below="@id/resolve_wraper">
         <TextView
@@ -154,7 +154,7 @@
             android:layout_centerVertical="true" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/divider_height"
             android:background="@color/divider"
             android:id="@+id/responsible_divider"
             android:layout_alignParentBottom="true" />
@@ -164,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/responsible_wraper"
         android:id="@+id/content_wraper"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="@dimen/content_margin_top">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
