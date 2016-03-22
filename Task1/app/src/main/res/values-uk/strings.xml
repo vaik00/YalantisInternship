@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Завдання1</string>
+    <string name="toolbar_title">CE-1257218</string>
+    <string name="title">Комунальне господарство</string>
+    <string name="action">В роботi</string>
+    <string name="created">Створено</string>
+    <string name="created_value">25 лютого 2016</string>
+    <string name="registered">Зареєстровано</string>
+    <string name="registered_value">26 лютого 2016</string>
+    <string name="resolve_to">Вирiшити до</string>
+    <string name="resolve_value">29 лютого 2016</string>
+    <string name="responsible">Вiдповiдальний</string>
+    <string name="responsible_value">Днiпропетровський МВК()</string>
+    <string name="main_text">Android — операційна система і платформа для мобільних телефонів та планшетних комп\'ютерів,
+        створена компанією Google на базі ядра Linux. Підтримується альянсом Open Handset Alliance (OHA).
+        Хоча Android базується на ядрі Linux, він стоїть дещо осторонь Linux-спільноти та Linux-інфраструктури.
+        Базовим елементом цієї операційної системи є реалізація Dalvik віртуальної машини Java,
+        і все програмне забезпечення і застосування спираються на цю реалізацію Java.</string>
+</resources>

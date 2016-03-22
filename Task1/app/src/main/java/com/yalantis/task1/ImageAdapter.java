@@ -1,7 +1,5 @@
 package com.yalantis.task1;
 
-import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +15,10 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> {
-    private List<String> images;
-    private Context ctx;
+    private List<String> mImages;
 
-    public ImageAdapter(List<String> images, Context ctx) {
-        this.images = images;
-        this.ctx = ctx;
+    public ImageAdapter(List<String> images) {
+        this.mImages = images;
     }
 
     @Override
@@ -33,16 +29,16 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ItemHolder item, final int position) {
+    public void onBindViewHolder(final ItemHolder item, final int position) {
         Picasso
-                .with(ctx)
-                .load(images.get(position))
+                .with(item.itemView.getContext())
+                .load(mImages.get(position))
                 .into(item.imageContainer);
         assert item.imageContainer != null;
         item.imageContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ctx,
+                Toast.makeText(item.itemView.getContext(),
                         "ImageView " + position,
                         Toast.LENGTH_SHORT)
                         .show();
@@ -52,12 +48,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
 
     @Override
     public int getItemCount() {
-        return images.size();
+        return mImages.size();
     }
 
 
     public class ItemHolder extends RecyclerView.ViewHolder {
-        @Nullable
         @Bind(R.id.image_container)
         ImageView imageContainer;
 
