@@ -57,8 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/mango"
         android:scaleType="center"
-        android:src="@drawable/f_a_b_2_x"
+        android:src="@drawable/f_a_b_2_x1"
         app:layout_behavior="com.internship.yalantis.task2.utils.HideFabOnScroll"/>
 
 </android.support.design.widget.CoordinatorLayout>

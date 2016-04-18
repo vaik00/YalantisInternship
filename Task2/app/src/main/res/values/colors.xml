@@ -16,6 +16,7 @@
     <color name="background_gradient_end">#4a76a4</color>
 
     <color name="background_drawable">#F89900</color>
+    <color name="mango">#ff9c26</color>
     <color name="divider">#DEDEDE</color>
     <color name="main_background">#EBEBEB</color>
     <color name="secondary_text">#979797</color>
