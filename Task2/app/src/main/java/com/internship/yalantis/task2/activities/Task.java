@@ -26,6 +26,64 @@ import com.internship.yalantis.task2.fragments.TaskFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+// Task - wrong name for activity
+// Task (32) - some fields can be local
+// Task (102) - empty if-statement
+// Task (128) - use default case in switch 
+// Task (138) - use default case in switch 
+
+
+// DetailTaskActivity (61) -  use default case in switch 
+
+
+// ImageAdapter (33) - item position should not be final in adapter
+// ImageAdapter (39) - don’t implement OnClickListener in adapter
+
+
+// ListTaskAdapter (36) - you always create new instance of view holder, so you never use the value assigned to your holder at line#32
+// ListTaskAdapter (43) - don’t implement OnClickListener in adapter
+// ListTaskAdapter (46) - don’t open activities in adapter
+// ListTaskAdapter (53) - wrong fields naming
+
+
+// TaskAdapter (21) - you should use your view holder realization here not RecyclerView.ViewHolder
+// TaskAdapter (22) - use abstraction, not realization
+// TaskAdapter (28) - why not to initialize v when you declare it?
+// TaskAdapter (35) - you don’t need to cast the holder (see #13)
+// TaskAdapter (42) - don’t implement OnClickListener in adapter, don’t open activities in adapter
+// TaskAdapter (57) - wrong fields naming
+
+
+// ListTaskFragment (43) - your onCreateView() method has too much responsibilies. Separate it into some smaller methods. Your View must not access your data, this is your Presenter’s responsibility 
+// ListTaskFragment (46) - use abstraction, not realization
+// ListTaskFragment (55) - empty method
+// ListTaskFragment (60) - empty method
+
+
+// TaskFragment (43) - your onCreateView() method has too much responsibilies. Separate it into some smaller methods. Your View must not access your data, this is your Presenter’s responsibility 
+// TaskFragment (46) - use abstraction, not realization
+// TaskFragment (55) - empty method
+// TaskFragment (61) - empty method
+// Your ListTaskFragment and TaskFragment have too much in common. Create base fragment 
+
+
+// TaskDataModel (7) - wrong fields naming
+// TaskDataModel (24) - wrong methods naming. They should not contain ‘m’ prefics
+// TaskDataModel (24) - The responsibility of getters and setters is obvious, so no need in comments on them
+
+
+// HideFabOnScroll is never used
+
+
+// JsonManager should be singleton 
+
+
+// Wrong resourses naming (can.xml, f_a_b_2_x.png, paper.xml, task.xml .. )
+// Use CTRL + ALT + L (Win)/OPTION + CMD + L (Mac) combination to reformat code
+// content_main.xml - too much repeating code
+// content_main.xml (13) - check your activity location
+// holder_item.xml - image view can be root view
+
 public class Task extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     @Bind(R.id.toolbar)
