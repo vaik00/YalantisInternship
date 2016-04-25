@@ -1,6 +1,6 @@
 package com.internship.yalantis.task2.fragments;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.internship.yalantis.task2.R;
+import com.internship.yalantis.task2.activities.DetailTaskActivity;
 import com.internship.yalantis.task2.adapters.TaskAdapter;
 import com.internship.yalantis.task2.models.TaskDataModel;
 import com.internship.yalantis.task2.utils.JsonManager;
@@ -40,26 +41,28 @@ public class TaskFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
         ButterKnife.bind(this, rootView);
-        InputStream fileStream = getResources().openRawResource(R.raw.data);
-        String data = new JsonManager().readTextFile(fileStream);
-        Gson gson = new Gson();
-        ArrayList<TaskDataModel> taskDataModel = gson.fromJson(data, new TypeToken<List<TaskDataModel>>() {
-        }.getType());
-        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext());
-        mTaskRecycler.setLayoutManager(mLinearLayoutManager);
-        mTaskRecycler.setAdapter(new TaskAdapter(taskDataModel));
+        TaskAdapter taskAdapter = new TaskAdapter(getData());
+        setupTaskRecycler(taskAdapter);
+        taskAdapter.setOnItemClickListener(new TaskAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
+            }
+        });
         return rootView;
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
+    private void setupTaskRecycler(TaskAdapter adapter) {
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext());
+        mTaskRecycler.setLayoutManager(mLinearLayoutManager);
+        mTaskRecycler.setAdapter(adapter);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
+    private ArrayList<TaskDataModel> getData() {
+        InputStream fileStream = getResources().openRawResource(R.raw.data);
+        String data = JsonManager.getInstance().readTextFile(fileStream);
+        Gson gson = new Gson();
+        return gson.fromJson(data, new TypeToken<List<TaskDataModel>>() {
+        }.getType());
     }
-
 }

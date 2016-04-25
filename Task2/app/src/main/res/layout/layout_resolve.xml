@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/resolve_wraper"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_height"
+    tools:showIn="@layout/content_main">
+
+    <TextView
+        android:id="@+id/resolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/resolve_to" />
+
+    <TextView
+        android:id="@+id/resolve_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/resolve_value"
+        android:textColor="@color/secondary_text" />
+
+    <View
+        android:id="@+id/resolve_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/divider" />
+</RelativeLayout>

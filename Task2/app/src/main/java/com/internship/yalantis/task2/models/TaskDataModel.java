@@ -4,123 +4,63 @@ import com.google.gson.annotations.SerializedName;
 
 public class TaskDataModel {
     @SerializedName("title")
-    private String mTitle;
+    private String title;
     @SerializedName("image")
-    private String mImage;
+    private String image;
     @SerializedName("like_count")
-    private String mLikeCount;
+    private String likeCount;
     @SerializedName("content")
-    private String mContent;
+    private String content;
     @SerializedName("date")
-    private String mDate;
+    private String date;
     @SerializedName("time")
-    private String mTime;
+    private String time;
 
-    /**
-     *
-     * @return
-     * The mTitle
-     */
-    public String getmTitle() {
-        return mTitle;
+    public String getTitle() {
+        return title;
     }
 
-    /**
-     *
-     * @param mTitle
-     * The mTitle
-     */
-    public void setmTitle(String mTitle) {
-        this.mTitle = mTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    /**
-     *
-     * @return
-     * The mImage
-     */
-    public String getmImage() {
-        return mImage;
+    public String getImage() {
+        return image;
     }
 
-    /**
-     *
-     * @param mImage
-     * The mImage
-     */
-    public void setmImage(String mImage) {
-        this.mImage = mImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    /**
-     *
-     * @return
-     * The mLikeCount
-     */
-    public String getmLikeCount() {
-        return mLikeCount;
+    public String getLikeCount() {
+        return likeCount;
     }
 
-    /**
-     *
-     * @param mLikeCount
-     * The like_count
-     */
-    public void setmLikeCount(String mLikeCount) {
-        this.mLikeCount = mLikeCount;
+    public void setLikeCount(String likeCount) {
+        this.likeCount = likeCount;
     }
 
-    /**
-     *
-     * @return
-     * The mContent
-     */
-    public String getmContent() {
-        return mContent;
+    public String getContent() {
+        return content;
     }
 
-    /**
-     *
-     * @param mContent
-     * The mContent
-     */
-    public void setmContent(String mContent) {
-        this.mContent = mContent;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    /**
-     *
-     * @return
-     * The mDate
-     */
-    public String getmDate() {
-        return mDate;
+    public String getDate() {
+        return date;
     }
 
-    /**
-     *
-     * @param mDate
-     * The mDate
-     */
-    public void setmDate(String mDate) {
-        this.mDate = mDate;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    /**
-     *
-     * @return
-     * The mTime
-     */
-    public String getmTime() {
-        return mTime;
+    public String getTime() {
+        return time;
     }
 
-    /**
-     *
-     * @param mTime
-     * The mTime
-     */
-    public void setmTime(String mTime) {
-        this.mTime = mTime;
+    public void setTime(String time) {
+        this.time = time;
     }
 }

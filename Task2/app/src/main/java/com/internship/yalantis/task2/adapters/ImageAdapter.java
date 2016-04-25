@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.internship.yalantis.task2.R;
 import com.squareup.picasso.Picasso;
@@ -17,10 +16,20 @@ import butterknife.ButterKnife;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> {
     private List<String> mImages;
+    private static OnItemClickListener sListener;
 
     public ImageAdapter(List<String> images) {
         this.mImages = images;
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        sListener = listener;
+    }
+
 
     @Override
     public ItemHolder onCreateViewHolder(ViewGroup parent, int i) {
@@ -30,21 +39,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
     }
 
     @Override
-    public void onBindViewHolder(final ItemHolder item, final int position) {
+    public void onBindViewHolder(final ItemHolder item, int position) {
         Picasso
                 .with(item.itemView.getContext())
                 .load(mImages.get(position))
                 .into(item.imageContainer);
-        assert item.imageContainer != null;
-        item.imageContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(item.itemView.getContext(),
-                        "ImageView " + position,
-                        Toast.LENGTH_SHORT)
-                        .show();
-            }
-        });
     }
 
     @Override
@@ -60,6 +59,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemHolder> 
         public ItemHolder(View item) {
             super(item);
             ButterKnife.bind(this, item);
+            imageContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (sListener != null)
+                        sListener.onItemClick(itemView, getLayoutPosition());
+                }
+            });
         }
     }
 }

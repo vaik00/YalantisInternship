@@ -7,6 +7,11 @@ import java.io.InputStream;
 
 public class JsonManager {
     public JsonManager(){}
+    private static JsonManager sInstance = new JsonManager();
+
+    public static JsonManager getInstance() {
+        return sInstance;
+    }
 
     public String readTextFile(InputStream inputStream) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();

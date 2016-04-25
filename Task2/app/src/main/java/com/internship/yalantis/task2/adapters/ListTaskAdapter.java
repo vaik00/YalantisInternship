@@ -28,37 +28,30 @@ public class ListTaskAdapter extends ArrayAdapter<TaskDataModel> {
     public View getView(int position, View convertView, ViewGroup parent) {
         TaskDataModel task = getItem(position);
         ViewHolder holder;
-        if (convertView != null) {
-            holder = (ViewHolder) convertView.getTag();
-        } else {
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.task_recycler_item, parent, false);
         }
         holder = new ViewHolder(convertView);
         convertView.setTag(holder);
-        holder.mItemTitle.setText(task.getmTitle());
-        holder.mItemContent.setText(task.getmContent());
-        holder.mItemDate.setText(task.getmDate());
-        holder.mItemTime.setText(task.getmTime());
-        holder.mLikeCount.setText(task.getmLikeCount());
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
-            }
-        });
+        holder.itemTitle.setText(task.getTitle());
+        holder.itemContent.setText(task.getContent());
+        holder.itemDate.setText(task.getDate());
+        holder.itemTime.setText(task.getTime());
+        holder.likeCount.setText(task.getLikeCount());
         return convertView;
     }
+
     static class ViewHolder {
         @Bind(R.id.item_title)
-        TextView mItemTitle;
+        TextView itemTitle;
         @Bind(R.id.like_count)
-        TextView mLikeCount;
+        TextView likeCount;
         @Bind(R.id.item_content)
-        TextView mItemContent;
+        TextView itemContent;
         @Bind(R.id.item_date)
-        TextView mItemDate;
+        TextView itemDate;
         @Bind(R.id.item_time)
-        TextView mItemTime;
+        TextView itemTime;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

@@ -45,15 +45,24 @@ public class DetailTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = ButterKnife.findById(this,R.id.toolbar);
+        Toolbar toolbar = ButterKnife.findById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         ButterKnife.bind(this);
         List<String> images = Arrays.asList(getResources().getStringArray(R.array.images));
         RecyclerView imagesContainer = ButterKnife.findById(this, R.id.images_container);
         imagesContainer.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        imagesContainer.setAdapter(new ImageAdapter(images));
+        ImageAdapter imageAdapter = new ImageAdapter(images);
+        imagesContainer.setAdapter(imageAdapter);
+        imageAdapter.setOnItemClickListener(new ImageAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                Toast.makeText(getApplicationContext(),
+                        "ImageView " + position,
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
     }
 
     @Override
@@ -62,7 +71,8 @@ public class DetailTaskActivity extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }

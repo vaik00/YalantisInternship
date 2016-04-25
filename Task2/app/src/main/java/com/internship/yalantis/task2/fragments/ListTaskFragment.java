@@ -1,17 +1,19 @@
 package com.internship.yalantis.task2.fragments;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.internship.yalantis.task2.R;
+import com.internship.yalantis.task2.activities.DetailTaskActivity;
 import com.internship.yalantis.task2.adapters.ListTaskAdapter;
 import com.internship.yalantis.task2.models.TaskDataModel;
 import com.internship.yalantis.task2.utils.JsonManager;
@@ -34,31 +36,28 @@ public class ListTaskFragment extends Fragment {
     public ListTaskFragment() {
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list_tasks, container, false);
         ButterKnife.bind(this, rootView);
-        InputStream fileStream = getResources().openRawResource(R.raw.data);
-        String data = new JsonManager().readTextFile(fileStream);
-        Gson gson = new Gson();
-        ArrayList<TaskDataModel> taskDataModel = gson.fromJson(data, new TypeToken<List<TaskDataModel>>() {
-        }.getType());
         ViewCompat.setNestedScrollingEnabled(mTaskList, true);
-        mTaskList.setAdapter(new ListTaskAdapter(getContext(), taskDataModel));
+        mTaskList.setAdapter(new ListTaskAdapter(getContext(), getData()));
+        mTaskList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
+            }
+        });
+
         return rootView;
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
+    private ArrayList<TaskDataModel> getData() {
+        InputStream fileStream = getResources().openRawResource(R.raw.data);
+        String data = JsonManager.getInstance().readTextFile(fileStream);
+        Gson gson = new Gson();
+        return gson.fromJson(data, new TypeToken<List<TaskDataModel>>() {
+        }.getType());
     }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
 }
