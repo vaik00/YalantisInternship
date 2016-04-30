@@ -20,18 +20,18 @@ import butterknife.ButterKnife;
 public class ListTaskAdapter extends ArrayAdapter<TaskDataModel> {
 
 
-    public ListTaskAdapter(Context context, ArrayList<TaskDataModel> taskDataModels) {
-        super(context, 0, taskDataModels);
+    public ListTaskAdapter(Context context, ArrayList<TaskDataModel> taskDataModel) {
+        super(context, 0, taskDataModel);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TaskDataModel task = getItem(position);
-        ViewHolder holder;
+        ItemHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.task_recycler_item, parent, false);
         }
-        holder = new ViewHolder(convertView);
+        holder = new ItemHolder(convertView);
         convertView.setTag(holder);
         holder.itemTitle.setText(task.getTitle());
         holder.itemContent.setText(task.getContent());
@@ -41,7 +41,7 @@ public class ListTaskAdapter extends ArrayAdapter<TaskDataModel> {
         return convertView;
     }
 
-    static class ViewHolder {
+    static class ItemHolder {
         @Bind(R.id.item_title)
         TextView itemTitle;
         @Bind(R.id.like_count)
@@ -53,7 +53,7 @@ public class ListTaskAdapter extends ArrayAdapter<TaskDataModel> {
         @Bind(R.id.item_time)
         TextView itemTime;
 
-        public ViewHolder(View view) {
+        public ItemHolder(View view) {
             ButterKnife.bind(this, view);
         }
     }

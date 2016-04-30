@@ -19,7 +19,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.internship.yalantis.task2.R;
-import com.internship.yalantis.task2.fragments.ListTaskFragment;
 import com.internship.yalantis.task2.fragments.TaskFragment;
 
 import butterknife.Bind;
@@ -27,7 +26,8 @@ import butterknife.ButterKnife;
 
 public class TaskActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    public static final int TYPE_RECYCLER = 1;
+    public static final int TYPE_LIST = 2;
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
 
@@ -109,11 +109,11 @@ public class TaskActivity extends AppCompatActivity
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return TaskFragment.newInstance();
+                    return TaskFragment.newInstance(TYPE_RECYCLER);
                 case 1:
-                    return TaskFragment.newInstance();
+                    return TaskFragment.newInstance(TYPE_RECYCLER);
                 case 2:
-                    return ListTaskFragment.newInstance();
+                    return TaskFragment.newInstance(TYPE_LIST);
                 default:
                     return null;
             }

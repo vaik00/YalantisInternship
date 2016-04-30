@@ -13,10 +13,10 @@ import android.widget.Toast;
 import com.internship.yalantis.task2.R;
 import com.internship.yalantis.task2.adapters.ImageAdapter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -49,6 +49,10 @@ public class DetailTaskActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ButterKnife.bind(this);
+        setupImages();
+    }
+
+    private void setupImages() {
         List<String> images = Arrays.asList(getResources().getStringArray(R.array.images));
         RecyclerView imagesContainer = ButterKnife.findById(this, R.id.images_container);
         imagesContainer.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
