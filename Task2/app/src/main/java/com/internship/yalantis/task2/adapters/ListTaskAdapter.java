@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.internship.yalantis.task2.R;
 import com.internship.yalantis.task2.models.TaskDataModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -18,6 +19,7 @@ public class ListTaskAdapter extends BaseAdapter {
     private List<TaskDataModel> mTaskDataModel;
 
     public ListTaskAdapter() {
+        mTaskDataModel = new ArrayList<>();
     }
     public void setTaskList(List<TaskDataModel> taskDataModel) {
         this.mTaskDataModel = taskDataModel;
