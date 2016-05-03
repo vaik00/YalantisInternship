@@ -20,10 +20,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder
     private List<TaskDataModel> mTaskDataModel;
     private static OnItemClickListener sListener;
 
-    public TaskAdapter(List<TaskDataModel> taskDataModel) {
+    public TaskAdapter() {
+        this.mTaskDataModel = new ArrayList<>();
+    }
+    public void setTaskList(List<TaskDataModel> taskDataModel){
         this.mTaskDataModel = taskDataModel;
     }
-
     public interface OnItemClickListener {
         void onItemClick(View itemView, int position);
     }

@@ -3,7 +3,6 @@ package com.internship.yalantis.task2.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
@@ -28,7 +27,6 @@ import com.internship.yalantis.task2.utils.FabOwner;
 import com.internship.yalantis.task2.utils.JsonManager;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -78,51 +76,63 @@ public class TaskFragment extends Fragment {
     }
 
     private void setupViewFromType() {
-        if (mType == TaskActivity.TYPE_RECYCLER) {
-            TaskAdapter taskAdapter = new TaskAdapter(getData());
-            setupTaskRecycler(taskAdapter);
-            taskAdapter.setOnItemClickListener(new TaskAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(View itemView, int position) {
-                    getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
-                }
-            });
-        } else {
-            ViewCompat.setNestedScrollingEnabled(mTaskList, true);
-            mTaskList.setAdapter(new ListTaskAdapter(getContext(), getData()));
-            mTaskList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
-                }
-            });
-            if (mFab != null) {
-                mTaskList.setOnScrollListener(new AbsListView.OnScrollListener() {
-                    private int mLastFirstVisibleItem = 0;
-
-                    @Override
-                    public void onScrollStateChanged(AbsListView view, int scrollState) {
-                    }
-
-                    @Override
-                    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                        int fabVisibility = mFab.getVisibility();
-                        if (firstVisibleItem > mLastFirstVisibleItem && fabVisibility == View.VISIBLE) {
-                            mFab.hide();
-                        } else if (firstVisibleItem < mLastFirstVisibleItem && fabVisibility == View.GONE) {
-                            mFab.show();
-                        }
-                        mLastFirstVisibleItem = firstVisibleItem;
-                    }
-                });
-            }
+        switch (mType) {
+            case TaskActivity.TYPE_LIST:
+                setupTaskList();
+                break;
+            default:
+                setupTaskRecycler();
+                break;
         }
     }
 
-    private void setupTaskRecycler(TaskAdapter adapter) {
+    private void setupTaskRecycler() {
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext());
+        TaskAdapter taskAdapter = new TaskAdapter();
         mTaskRecycler.setLayoutManager(mLinearLayoutManager);
-        mTaskRecycler.setAdapter(adapter);
+        mTaskRecycler.setAdapter(taskAdapter);
+        taskAdapter.setTaskList(getData());
+        taskAdapter.notifyDataSetChanged();
+        taskAdapter.setOnItemClickListener(new TaskAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position) {
+                getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
+            }
+        });
+    }
+
+    private void setupTaskList() {
+        ViewCompat.setNestedScrollingEnabled(mTaskList, true);
+        ListTaskAdapter listAdapter = new ListTaskAdapter();
+        listAdapter.setTaskList(getData());
+        listAdapter.notifyDataSetChanged();
+        mTaskList.setAdapter(listAdapter);
+        mTaskList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getContext().startActivity(new Intent(getContext(), DetailTaskActivity.class));
+            }
+        });
+        if (mFab != null) {
+            mTaskList.setOnScrollListener(new AbsListView.OnScrollListener() {
+                private int mLastFirstVisibleItem = 0;
+
+                @Override
+                public void onScrollStateChanged(AbsListView view, int scrollState) {
+                }
+
+                @Override
+                public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                    int fabVisibility = mFab.getVisibility();
+                    if (firstVisibleItem > mLastFirstVisibleItem && fabVisibility == View.VISIBLE) {
+                        mFab.hide();
+                    } else if (firstVisibleItem < mLastFirstVisibleItem && fabVisibility == View.GONE) {
+                        mFab.show();
+                    }
+                    mLastFirstVisibleItem = firstVisibleItem;
+                }
+            });
+        }
     }
 
     private List<TaskDataModel> getData() {
