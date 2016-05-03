@@ -11,15 +11,16 @@ import com.internship.yalantis.task2.models.TaskDataModel;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ItemViewHolder> {
-    private ArrayList<TaskDataModel> mTaskDataModel;
+    private List<TaskDataModel> mTaskDataModel;
     private static OnItemClickListener sListener;
 
-    public TaskAdapter(ArrayList<TaskDataModel> taskDataModel) {
+    public TaskAdapter(List<TaskDataModel> taskDataModel) {
         this.mTaskDataModel = taskDataModel;
     }
 

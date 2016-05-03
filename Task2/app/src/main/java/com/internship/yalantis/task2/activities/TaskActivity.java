@@ -1,6 +1,7 @@
 package com.internship.yalantis.task2.activities;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,16 +21,19 @@ import android.view.MenuItem;
 
 import com.internship.yalantis.task2.R;
 import com.internship.yalantis.task2.fragments.TaskFragment;
+import com.internship.yalantis.task2.utils.FabOwner;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class TaskActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, FabOwner {
     public static final int TYPE_RECYCLER = 1;
     public static final int TYPE_LIST = 2;
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
+    @Bind(R.id.fab)
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +100,11 @@ public class TaskActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public FloatingActionButton getFloatingActionButton() {
+        return fab;
     }
 
 

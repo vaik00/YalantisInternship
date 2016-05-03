@@ -8,9 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Helper class to hide FAB on scroll
- * Gets used by app:layout_behavior=".FabHideOnScroll" parameter in XML of a FAB button
- * Created by karataev on 4/9/16.
+ * Used as layout_behavior in app_bar_task
  */
 public class HideFabOnScroll extends FloatingActionButton.Behavior {
 
@@ -35,7 +33,6 @@ public class HideFabOnScroll extends FloatingActionButton.Behavior {
                 dxUnconsumed,
                 dyUnconsumed);
 
-        //child -> Floating Action Button
         if (child.getVisibility() == View.VISIBLE && dyConsumed > 0) {
             child.hide();
         } else if (child.getVisibility() == View.GONE && dyConsumed < 0) {
@@ -49,6 +46,7 @@ public class HideFabOnScroll extends FloatingActionButton.Behavior {
                                        View directTargetChild,
                                        View target,
                                        int nestedScrollAxes) {
+
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 }

@@ -13,6 +13,7 @@ import com.internship.yalantis.task2.activities.DetailTaskActivity;
 import com.internship.yalantis.task2.models.TaskDataModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 public class ListTaskAdapter extends ArrayAdapter<TaskDataModel> {
 
 
-    public ListTaskAdapter(Context context, ArrayList<TaskDataModel> taskDataModel) {
+    public ListTaskAdapter(Context context, List<TaskDataModel> taskDataModel) {
         super(context, 0, taskDataModel);
     }
 
