@@ -1,0 +1,40 @@
+<resources>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">100dp</dimen>
+    <dimen name="drawer_width">304dp</dimen>
+    <dimen name="collapsing_toolbar_height">104dp</dimen>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="fab_margin">24dp</dimen>
+    <dimen name="tablayout_height">48dp</dimen>
+    <dimen name="tablayout_margin">10dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="image_height">300dp</dimen>
+    <dimen name="recycler_minheight">300dp</dimen>
+    <dimen name="recycler_padding">8dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="subtitle_height">48dp</dimen>
+    <dimen name="item_height">72dp</dimen>
+    <dimen name="content_margin_top">16dp</dimen>
+    <dimen name="subtitle_divider_margin_top">10dp</dimen>
+
+    <dimen name="cardview_height">126dp</dimen>
+    <dimen name="item_title">16sp</dimen>
+    <dimen name="main_text">14sp</dimen>
+    <dimen name="cardview_corner_radius">8dp</dimen>
+
+    <dimen name="cardview_left_container_width">80dp</dimen>
+    <dimen name="cardview_like_margin">20dp</dimen>
+    <dimen name="cardview_like_margin_bottom">16.6dp</dimen>
+    <dimen name="cardview_like_count_margin">46dp</dimen>
+    <dimen name="cardview_margin">16dp</dimen>
+    <dimen name="cardview_date_margin">24dp</dimen>
+    <dimen name="cardview_title_height">40dp</dimen>
+    <dimen name="cardview_content_height">16dp</dimen>
+    <dimen name="cardview_date_height">16dp</dimen>
+    <dimen name="cardview_main_content_margin">10dp</dimen>
+
+
+</resources>

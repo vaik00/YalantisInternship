@@ -1,0 +1,51 @@
+<resources>
+
+    <string-array name="images" translatable="false">>
+        <item>https://pp.vk.me/c633726/v633726383/15d24/N7W-_f-vjxQ.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d1b/3N8v74WxNDA.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d12/jUQdkb91Yko.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d09/UASH-aXedzk.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15d00/BT9EAx_Q_hA.jpg</item>
+        <item>https://pp.vk.me/c633726/v633726383/15cf7/KNTLK4bcCX8.jpg</item>
+    </string-array>
+    <string name="toolbar_title">CE-1257218</string>
+    <string name="title">Комунальне господарство</string>
+    <string name="action">В роботi</string>
+    <string name="created">Створено</string>
+    <string name="created_value">25 лютого 2016</string>
+    <string name="registered">Зареєстровано</string>
+    <string name="registered_value">26 лютого 2016</string>
+    <string name="resolve_to">Вирiшити до</string>
+    <string name="resolve_value">29 лютого 2016</string>
+    <string name="responsible">Вiдповiдальний</string>
+    <string name="responsible_value">Днiпропетровський МВК()</string>
+    <string name="main_text">Android — операційна система і платформа для мобільних телефонів та планшетних комп\'ютерів,
+        створена компанією Google на базі ядра Linux. Підтримується альянсом Open Handset Alliance (OHA).
+        Хоча Android базується на ядрі Linux, він стоїть дещо осторонь Linux-спільноти та Linux-інфраструктури.
+        Базовим елементом цієї операційної системи є реалізація Dalvik віртуальної машини Java,
+        і все програмне забезпечення і застосування спираються на цю реалізацію Java.</string>
+    <string name="app_name">Task2</string>
+
+    <string name="task_title">Всi звернення</string>
+    <string name="menu_item_sort">Звернення</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="all_requests">Всi звернення</string>
+    <string name="map_requests">Звернення на мапi</string>
+    <string name="sign_in">Увiйти в аккаунт</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nav_bar_title">e-contact</string>
+
+    <string name="in_progress">В роботi</string>
+    <string name="completed">Виконано</string>
+    <string name="failed">Не виконано</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="sample_title">Демонтаж інших об’єктів, що входять до переліку мал&#8230;</string>
+    <string name="sample_item">Вул. Вадима Гетьмана, 42</string>
+    <string name="sample_date">Кві 26, 2016</string>
+    <string name="sample_time">-14 днів</string>
+</resources>

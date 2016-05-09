@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.TaskActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_height"
+        app:cardCornerRadius="@dimen/cardview_corner_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/cardview_left_container_width"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/cardview_margin"
+                android:layout_marginTop="@dimen/cardview_margin"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/main_image_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:alpha="0.54"
+                        android:src="@drawable/ic_pie_chart" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/like_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginLeft="@dimen/cardview_like_margin"
+                        android:alpha="0.19"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_social" />
+
+                    <TextView
+                        android:id="@+id/like_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/cardview_like_count_margin"
+                        android:alpha="0.23"
+                        android:fontFamily="sans-serif"
+                        android:text="49"
+                        android:textSize="@dimen/main_text"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:alpha="0.11"
+                android:background="@color/black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/cardview_margin"
+                android:layout_marginLeft="@dimen/cardview_margin"
+                android:layout_marginRight="@dimen/cardview_margin"
+                android:layout_marginTop="@dimen/cardview_margin"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/mTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cardview_title_height">
+
+                    <TextView
+                        android:id="@+id/item_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/sample_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/item_title"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cardview_content_height"
+                    android:layout_below="@+id/mTitle"
+                    android:layout_marginTop="@dimen/cardview_main_content_margin">
+
+                    <TextView
+                        android:id="@+id/item_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.54"
+                        android:fontFamily="sans-serif-regular"
+                        android:text="@string/sample_item"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/main_text" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/cardview_content_height"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/cardview_date_margin"
+                    android:layout_marginTop="@dimen/cardview_margin">
+
+                    <TextView
+                        android:id="@+id/item_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.54"
+                        android:text="@string/sample_date"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/main_text" />
+
+                    <TextView
+                        android:id="@+id/item_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:alpha="0.54"
+                        android:text="@string/sample_time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/main_text" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
